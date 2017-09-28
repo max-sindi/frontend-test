@@ -1,6 +1,6 @@
 'use strict';
 	document.addEventListener("DOMContentLoaded", function() {
-
+		let git;
 		// popup module start
 
 		// clickable items
