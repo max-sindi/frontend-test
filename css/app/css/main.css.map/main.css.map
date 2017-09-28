@@ -1,0 +1,1 @@
+{"version":3,"file":"../../../main.css","sources":["main.scss","_main-styles.scss"],"sourcesContent":["@import 'main-styles';  ","body {\n\tbackground-color: red;   \n}"],"names":[],"mappings":"ACAA,AAAA,IAAI,CAAC;EACJ,gBAAgB,EAAE,GAAG,GACrB"}

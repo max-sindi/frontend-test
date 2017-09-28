@@ -1,0 +1,92 @@
+.mobile-header {
+	display: none;
+	padding: 60px 0 70px;
+	background: url(../img/mobile-header.png) no-repeat center center / cover;
+	text-align: center;
+	color: #eaf2f4;
+	font-size: 45px;
+}
+.main {
+	max-width: $max-width-large;
+	width: 100%;
+	margin: 0 auto;
+}
+.main-items-wrap {
+	margin: 0 ($item-padding-large*-1);
+	@include clearfix;
+}
+.main-item {
+	float: left;
+	position: relative;
+	width: 265px;
+	padding: 0 $item-padding-large 20px;
+
+	.item-img-wrap {
+		position: relative;
+		display: block;
+	}
+	.main-item-img {
+		display: block;
+		width: 100%;
+	}
+	.show-more-hover {
+		position: absolute;
+		display: none;
+		top: 116px;
+		left: 68px;
+		background-color: $show-more-light;
+		padding: 8px 14px 8px 10px;
+		font-size: (18rem/14);
+	}
+	.show-more-static {
+		position: absolute;
+		display: none;
+		width: 100%;
+		bottom: 0;
+		box-sizing: border-box;
+		padding: 20.5px 3px;
+		background-color: rgba(36, 36, 36, 0.5);
+		color: $show-more-light;
+		text-align: center;
+		font-size: (20rem/14);
+	}
+	.item-price {
+		position: absolute;
+		padding: 4px;
+		right: $item-padding-large;
+		top: 221px; 
+		background-color: $price-bg;
+		font-size: (16rem/14);
+		&.has-discount {
+			padding: 4px 10px;
+		}
+	}
+	.price-without-discount {
+		color: $show-more-dark;
+	} 
+	.price-with-discount {
+		color: $price-discount;
+		padding-left: 15px;
+	}
+	.item-title {
+		padding-top: 20px;
+		color: $item-title-color;
+		text-align: center;
+		font: (12rem/14) $oswald; 
+	}
+	.item-details {
+		display: none;
+	}
+}
+.canceled-price {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 4px;
+		height: 1px;
+		background-color: $show-more-dark;
+		bottom: 40%;
+	}
+} 

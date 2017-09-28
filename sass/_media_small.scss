@@ -1,0 +1,94 @@
+@media (max-width: $small_breakpoint) {
+	.mobile-header {
+		display: block;
+	}
+	.main {
+		width: 100%;
+	}
+	.main-items-wrap {
+		margin: 0;
+	}
+	.main-item {
+		float: none;
+		max-width: 280px;
+		width: 100%;
+		padding: 0 0 20px 0;
+		margin: 0 auto;
+		.show-more-static {
+			padding: 11.5px 3px;
+			font-size: (18rem/14);
+		}
+		.item-title {
+			padding-top: 0;
+		}
+	}
+	.popup-wrap-2 {
+		width: 100%;
+		max-width: 405px;
+		padding: 73px 0 45px;
+	}
+	.popup-img-wrap {
+		float: none;
+		width: 100%;
+		> img {
+			margin: 0 auto;
+		}
+	}
+	.popup-header {
+		padding: 0 40px;
+		@include clearfix;		
+	}
+	.popup-id {
+		font-size: 15px;
+		float: left;
+	}
+	.popup-rate {
+		float: right;
+		margin-bottom: 25px;
+	}
+	.popup-description {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 40px;
+	}
+	.popup-close-btn {
+		border: none;
+	}
+	.popup-close-cross {
+		font-size: 80px;
+	}
+	.popup-detail {
+		padding: 25px 0;
+		font-size: 13px;
+	}
+	.popup-social-list {
+		text-align: center;
+		padding-bottom: 25px;
+		> li {
+			display: inline-block;
+			margin: 0 9px;
+		}
+	}
+	.popup-price {
+		text-align: center;
+		> span {
+			display: inline-block;
+		}
+		.price-without-discount {
+			padding-right: 14px;
+		}
+	}
+	.popup-size {
+		text-align: center;
+	}
+	.popup-size-title {
+		display: block;
+		margin-right: 0;	
+	}
+	.popup-add-btn {
+		display: block;
+		margin: auto;
+		width: auto;
+		padding: 16px 75px;
+	}
+} 

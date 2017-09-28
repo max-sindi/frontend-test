@@ -1,0 +1,200 @@
+
+.popup-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	background-color: rgba(123, 123, 123, 0.2);
+	
+}
+.popup-wrap-2 {
+	position: relative;
+	width: 835px;
+	box-sizing: border-box;
+	margin: auto;
+	padding: 20px 25px 25px 20px;
+	background-color: #fff;
+	@include clearfix;
+}
+.popup-title-small {
+	font-size: 25px;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+}
+.popup-id-small {
+	display: none;
+}
+.popup-img-wrap {
+	position: relative;
+	float: left;
+	width: 400px;
+	.main-item-img {
+		width: 100%;
+		height: 420px;
+	}
+}
+.popup-social-wp {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
+.popup-social-button {
+	background-color: transparent;
+	border: none;
+	color: $blue;
+	font-size: 50px;
+	cursor: pointer;
+	> .popup-social-cross {
+		display: block;
+	}
+}
+.popup-social-list {
+	padding-right: 20px;
+	> li {
+		margin-bottom: 10px;
+	}
+	.popup-social-link {
+		display: table-cell;
+		height: 40px;
+		width: 40px;
+		box-sizing: border-box;
+		border: 2px solid $blue;
+		border-radius: 50%;
+		vertical-align: middle;
+		text-align: center;
+		color: $blue;
+	}
+}
+.popup-description {
+	float: left;
+	padding-left: 35px;
+	width: 325px;
+}
+.popup-close-btn {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 10px;
+	right: 10px;
+	transform: rotate(45deg);
+	border: 2px solid $blue;
+	border-radius: 50%;
+	color: $blue;
+	text-align: center;
+	cursor: pointer;
+	z-index: 2;
+}
+.popup-close-cross {
+	font-size: 40px;
+	font-weight: 600;
+}
+.popup-title-small {
+	display: none;
+}
+.popup-title {
+	padding-bottom: 18px;
+	font-size: 20px;
+	font-stretch: condensed;
+	color: $show-more-dark;
+}
+.popup-id {
+	padding-bottom: 25px;
+	font-size: 8px;
+	font-weight: 400;
+	color: $grey;
+}
+.popup-price {
+	padding-bottom: 25px;
+	font-size: 20px;
+	.price-without-discount {
+		padding-right: 25px;
+		color: $show-more-dark;
+	}
+	.price-with-discount {
+		color: $price-discount;
+	}
+}
+.popup-rate {
+	width: 92px;
+	height: 16px;
+	margin-bottom: 30px;
+	background: url(../img/stars.png) no-repeat;
+}
+.popup-rate-small {
+	display: none;
+	width: 92px;
+	height: 16px;
+	background: url(../img/stars.png) no-repeat;
+}
+.popup-detail {
+	font-weight: 400;
+	font-size: 10px;
+	color: $main-text;
+	line-height: 1.85;
+	padding-bottom: 40px;
+}
+.popup-price-small {
+	display: none;
+}
+.popup-size {
+	margin-bottom: 25px;
+	font-weight: 700;
+}
+.popup-size-title {
+	display: inline-block;
+	margin-right: 17px;
+	font-size: 10px;
+	line-height: 1;
+	text-transform: uppercase;
+	.large-hidden {
+		display: none;
+	}
+}
+.popup-size-list {
+	display: inline-block;
+	margin: 0 -11px;
+	text-transform: uppercase;
+}
+.popup-size-list-item {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0 8px;
+	border: 1px solid $show-more-dark;
+	border-radius: 50%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	cursor: pointer;
+	&.active {
+		background-color: $show-more-dark;
+		color: #fff;
+	}
+}
+.popup-add-btn {
+	background-color: $price-bg;
+	padding: 16px 56px;
+	border-radius: 22px;
+	font-weight: 700;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	border: none;
+	line-height: 1;
+	cursor: pointer;
+}
+.popup-detail-small-wp {
+	width: 100%;
+	display: none;
+	clear: both;
+	padding-top: 25px;
+}
+.popup-detail-small-title {
+	font-size: 23px;
+	padding-bottom: 12px;
+}
+.popup-detail-small {
+	font-weight: 400;
+	line-height: 1.2;
+}

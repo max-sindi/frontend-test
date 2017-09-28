@@ -1,0 +1,17 @@
+@media (min-width: $large_breakpoint) {
+	.main-item {
+		.item-img-wrap:hover {
+			.show-more-hover {
+				display: block;
+			}
+		}
+	}
+	.popup-social-wp:hover {
+		.popup-social-cross {
+			transform: rotate(45deg);
+		}
+		.popup-social-list {
+			display: block;
+		}
+	}
+}
