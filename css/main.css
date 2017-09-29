@@ -30,10 +30,15 @@
 
 html {
   font: 700 14px/1 "Open Sans", sans-serif;
-  color: #242424; }
+  color: #242424;
+  height: 100%;
+  width: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
 
 a {
   color: inherit;
@@ -51,6 +56,10 @@ ul, li {
   text-align: center;
   color: #eaf2f4;
   font-size: 45px; }
+
+.wrap {
+  overflow-y: auto;
+  height: 100%; }
 
 .main {
   max-width: 835px;
@@ -112,20 +121,13 @@ ul, li {
     padding-top: 20px;
     color: #282828;
     text-align: center;
-    font: 0.85714rem "Oswald", sans-serif; }
+    font: 0.85714rem "Oswald", sans-serif;
+    text-transform: uppercase; }
   .main-item .item-details {
     display: none; }
 
-.canceled-price {
-  position: relative; }
-  .canceled-price:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 4px;
-    height: 1px;
-    background-color: #282d3b;
-    bottom: 40%; }
+.cancelled-price > span {
+  text-decoration: line-through; }
 
 .popup-wrap {
   position: fixed;
@@ -134,7 +136,7 @@ ul, li {
   right: 0;
   bottom: 0;
   overflow: auto;
-  background-color: rgba(123, 123, 123, 0.2); }
+  background-color: rgba(123, 123, 123, 0.5); }
 
 .popup-wrap-2 {
   position: relative;
@@ -222,8 +224,8 @@ ul, li {
 .popup-title {
   padding-bottom: 18px;
   font-size: 20px;
-  font-stretch: condensed;
-  color: #282d3b; }
+  color: #282d3b;
+  text-transform: uppercase; }
 
 .popup-id {
   padding-bottom: 25px;
@@ -338,7 +340,8 @@ ul, li {
   .main-items-wrap {
     margin: 0 -20px; }
   .main-item {
-    padding: 0 20px 28px; }
+    padding: 0 20px 28px;
+    width: 300px; }
     .main-item .item-title {
       padding-top: 5px;
       font-size: 1.42857rem; }

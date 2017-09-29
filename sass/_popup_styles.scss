@@ -6,7 +6,7 @@
 	right: 0;
 	bottom: 0;
 	overflow: auto;
-	background-color: rgba(123, 123, 123, 0.2);
+	background-color: rgba(123, 123, 123, 0.5);
 	
 }
 .popup-wrap-2 {
@@ -96,8 +96,8 @@
 .popup-title {
 	padding-bottom: 18px;
 	font-size: 20px;
-	font-stretch: condensed;
 	color: $show-more-dark;
+	text-transform: uppercase;
 }
 .popup-id {
 	padding-bottom: 25px;

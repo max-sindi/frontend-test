@@ -6,6 +6,10 @@
 	color: #eaf2f4;
 	font-size: 45px;
 }
+.wrap {
+	overflow-y: auto;
+	height: 100%;
+}
 .main {
 	max-width: $max-width-large;
 	width: 100%;
@@ -72,21 +76,15 @@
 		padding-top: 20px;
 		color: $item-title-color;
 		text-align: center;
-		font: (12rem/14) $oswald; 
+		font: (12rem/14) $oswald;
+		text-transform: uppercase;
 	}
 	.item-details {
 		display: none;
 	}
 }
-.canceled-price {
-	position: relative;
-	&:before {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 4px;
-		height: 1px;
-		background-color: $show-more-dark;
-		bottom: 40%;
+.cancelled-price {
+	> span {
+		text-decoration: line-through;
 	}
-} 
+}

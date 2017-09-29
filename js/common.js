@@ -1,7 +1,20 @@
 'use strict';
 	document.addEventListener("DOMContentLoaded", function() {
-		let git;
-		// popup module start
+		
+		function trimLineThrough() {
+			let items = document.querySelectorAll('.cancelled-price');
+
+			for(let i = 0; i < items.length; i++) {
+				let text = items[0].innerHTML;
+				items[0].innerHTML = text.trim();
+			}
+			
+		}
+
+		trimLineThrough();
+
+
+		// popup module
 
 		// clickable items
 		const items = document.querySelectorAll('.item-img-wrap');
@@ -11,10 +24,15 @@
 		}
 
 		//here will be active popup item
-		let currentTemplate;
-		let thumb = window.innerWidth - document.documentElement.clientWidth;
 		let addedElem;
+		
+		let wrap = document.querySelector('.wrap');
+		let thumb = document.documentElement.offsetWidth - wrap.clientWidth;
 
+		let windowHeight = document.documentElement.clientHeight;
+		let windowWidth = document.documentElement.clientWidth;
+		
+		let currentTemplate;
 		function popupHandle(e) {
 			let self = this;
 
@@ -23,11 +41,11 @@
 
 				let elem = new PopupItem(that);
 				document.body.appendChild(elem.dom);
-
 				addedElem = document.querySelector('.popup-wrap');
 
-				document.body.style.overflowY = 'hidden';
-				document.body.style.paddingRight = `${thumb}px`;
+				if(elem.screen === 'template-large') {
+					addedElem.style.marginLeft = ` -${thumb}px `;
+				}
 				
 				// add event listener for close 
 				addedElem.addEventListener('click', closePopup);
@@ -68,24 +86,17 @@
 						activeSize = item;
 					} 
 				}
-
-
-				// var scroll = window.pageYOffset;
-				// document.body.style.overflowY = "hidden";
-				// document.body.scrollTop(scroll);
-				// debugger
-				// return addedElem;
 			}
 
 			let popup = render(this);
-			// => vertical-align = middle 
-			let windowHeight = document.documentElement.clientHeight;
-			let windowWidth = document.documentElement.clientWidth;
 
+			// vertical-align = middle 
 			heightChange();
 
 			// change height => change padding
 			window.onresize = function() {
+
+				if(!addedElem) return;
 
 				let currentHeight = document.documentElement.clientHeight;
 				let currentWidth = document.documentElement.clientWidth;
@@ -179,142 +190,5 @@
 
 			addedElem.parentElement.removeChild(addedElem);
 			addedElem = null;
-			document.body.style.overflowY = "";
-			document.body.style.paddingRight = '';
 		}
-
-		var autoclick = document.querySelector('.item-img-wrap');
-		autoclick.click();
-
-		// function itemsHandler (e) {
-		// 	console.log('new module');
-		// 	let body = document.body;
-		// 	let scroll =  window.pageYOffset;
-		// 	document.body.style.overflow = "hidden";
-
-		// 	let wth = document.documentElement.clientWidth;
-		// 	let temp;
-
-		// 	if (wth >= 960) {
-		// 		temp = document.getElementById('template-large');
-		// 	} else if (wth < 960 && wth > 720) {
-		// 		temp = document.getElementById('template-middle');
-		// 	} else {
-		// 		temp = document.getElementById('template-small');
-		// 	}
-
-		// 	let cont = temp.content;
-		// 	let parent = this.parentNode;
-
-		// 	const img = cont.querySelector('.popup-item-img');
-		// 	const urlImg = parent.querySelector('.main-item-img').src;
-		// 	img.src = urlImg;
-
-		// 	function fillContent(args) {
-		// 		let l = arguments.length;
-		// 		for(let i = 0; i < l; i++) {
-		// 			const item = cont.querySelector(`.popup-${arguments[i]}`);
-		// 			item.innerHTML = parent.querySelector(`.item-${arguments[i]}`).innerHTML;
-		// 		}
-		// 	};
-
-		// 	fillContent('title', 'id', 'price', 'detail');
-
-		// 	const tempClone = document.importNode(temp.content, true);
-		// 	document.body.appendChild(tempClone);
-		// 	addedElem = document.querySelector('.popup-wrap');
-			
-			
-		// 	const sizeArr = addedElem.querySelectorAll('.popup-size-list-item');
-		// 	for(let i = 0; i < sizeArr.length; i++) {
-		// 		sizeArr[i].addEventListener('click', chooseSize);
-		// 	}
-			
-		// 	var currentActive = document.querySelector('.popup-size-list-item.active');
-		// 	function chooseSize(e) {
-		// 		if(this.classList.contains('active')) return;
-		// 		this.classList.add('active');
-		// 		currentActive.classList.remove('active');
-		// 		currentActive = this;
-		// 	}
-
-		// 	function deleteNode() {
-		// 		addedElem.parentElement.removeChild(addedElem);
-		// 	}
-
-		// 	const btn = addedElem.querySelector('.popup-close-btn');
-			
-		// 	addedElem.addEventListener('click', closePopup);
-		// 	function closePopup(e) {
-				
-		// 		if(e.target === this 
-		// 			 || e.target === btn 
-		// 			 || e.target.parentElement === btn) 
-		// 		{
-		// 					deleteNode();
-		// 					document.body.style.overflow = "";
-		// 					window.scrollBy(0, scroll);
-		// 		}
-		// 	}
-
-		// 	let that = this;
-		// 	let currentMode = temp.dataset.media;
-			
-		// 	window.onresize = funcResize;
-			
-		// 	function funcResize(arg) {
-		// 		let width = document.documentElement.clientWidth;
-		// 		let newMode = findNewMode(width);
-		// 		if(newMode !== currentMode) {
-		// 			btn.click();
-		// 			that.click();
-		// 			currentMode = newMode; 
-		// 		}
-
-		// 		function findNewMode(width) {
-		// 			let newMode;
-
-		// 			if(width >= 960) {
-		// 				newMode = 'large';
-		// 			} else if (width < 960 && width > 720 ) {
-		// 				newMode = 'middle';
-		// 			} else {
-		// 				newMode = 'small';
-		// 			};
-
-		// 			return newMode;
-		// 		};
-
-		// 	}
-		// }
 });
-
-// function A() {this.name = 123, this.age = 24};
-
-// function B() {};
-// B.prototype = new A();
-// var v = new B();
-
-
-// var a = new B();
-
-// for (var key in a) {
-// 	console.dir(key);
-// }
-
-// function inherit(F) {
-// 	var q = {};
-// 	q.__proto__ = new F();
-// 	return q;
-// }
-// var f = inherit(A);
-
-function Menu(options) {
-	this.options = Object.create(options);
-
- }
- let options = {
- 	width: 300,
- 	height: 100,
- }
- var menu = new Menu(options);
